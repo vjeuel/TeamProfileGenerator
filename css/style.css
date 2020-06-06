@@ -1,175 +1,113 @@
+* {
+   box-sizing: border-box;
+}
 
 html {
    font-size: 10px;
+   background-color: var(--dg);
 }
-
-body {
-   background-color: var(--pale);
-   margin: 0;
-   padding: 0;
-}
-
 
 /* FONTS and SIZES
 *************************************************/
-/* font-family: 'Aleo', serif;
+/* 
+font-family: 'Aleo', serif;
 font-family: 'Aleo-Bold', serif;
 font-family: 'Josefin Sans Italic', sans-serif;
-font-family: 'Josefin Sans Bold Italic', sans-serif; */
-
+font-family: 'Josefin Sans Bold Italic', sans-serif;
+*/
 
 
 h1 {
    font-family: 'Aleo Bold', serif;
+   font-size: 3rem;
 }
 
 h2 {
    font-family: 'Aleo', serif;
+   font-size: 2.5rem;
+   color: var(--lg);
+   margin: 2rem 0;
 }
 
-h4 {
+h3 {
    font-family: 'Josefin Sans Italic', serif;
-}
-
-h5 {
-   font-family: 'Josefin Sans Bold Italic', serif;
-}
-
-h6 {
-   font-family: 'Josefin Sans Italic', serif;
+   font-size: 2rem;
+   margin-bottom: 2rem;
+   color: var(--wt);
 }
 
 p, a {
    font-family: 'Aleo', serif;
+   font-size: 1.5rem;
+   text-decoration: none;
+   margin-bottom: 1rem;
+   color: var(--wt);
 }
 
-h1 { font-size: 3rem; }
+a:hover {
+   color: var(--lg);
+}
 
-h2 { font-size: 2rem; }
-
-h3 { font-size: 1.5rem; }
-
-h4 { font-size: 1.25rem; }
-
-/* h5 { font-size: 1.5rem; }
-
-h6 { font-size: 1.25rem; } */
-
-a, p { font-size: 1.5rem;
-       text-decoration: none; }
-
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, p, a {
    text-align: center;
    line-height: 1.2;
    letter-spacing: 0.15rem;
 }
 
-/* COLORS
-*************************************************/
-#colors {
-   color: white;
-   font-size: 2rem;
-   text-align: center;
-   line-height: 1.5;
+/************ BANNER ************/
+.container-fluid img{
+   width: 100%;
+   margin-bottom: 5rem;
+}
+
+/************ MAIN CONTAINER ************/
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.team-area {
    display: grid;
-   grid-template-columns: repeat(5, 1fr);
+   grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+   grid-row-gap: 5rem;
+   grid-column-gap: 2rem;
+   justify-items: center;
 }
 
-#colors .color-pd {
-   background-color: var(--db);
-   padding: 2rem;
-   box-shadow: 0 0 10px black;
+.card {
+   display: grid;
+   justify-items: center;
 }
 
-#colors .color-pl {
-   background-color: var(--bl);
-   padding: 2rem;
-   box-shadow: 0 0 10px black;
-}
-
-#colors .color-sd {
-   background-color: var(--lg);
-   padding: 2rem;
-   box-shadow: 0 0 10px black;
-}
-
-#colors .color-sl {
-   background-color: var(--or);
-   padding: 2rem;
-   box-shadow: 0 0 10px black;
-}
-
-#colors .color-lt {
-   background-color: var(--lo);
-   padding: 2rem;
-   box-shadow: 0 0 10px black;
+.manager {
+   grid-column: 1 / -1;
 }
 
 
-/* TEXTS
+
+.card-header img {
+   width: 25rem;
+   height: 25rem;
+   border-radius: 50%;
+   border: 2rem solid var(--lg);
+}
+
+
+/* MEDIA QUERIES - SCREEN SIZES
 *************************************************/
-#texts {
-   color: white;
-   background-color: var(--db);
-   padding: 2rem 0 0 0;
-}
 
-#texts .text {
-   padding: 2rem;
-   box-shadow: 0 5px 5px rgba(0,0,0,0.75);
-}
+@media (min-width: 576px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
 
 
 /* COLORS
 *************************************************/
 /* Color Theme Swatches in RGBA */
 :root {
-   --pd: rgba(89, 6, 0, 1);      /* #590600 */
-   --pl: rgba(196, 40, 10, 1);   /* #C4280A */
-   --sd: rgba(9, 166, 3, 1);     /* #09A603 */
-   --sl: rgba(90, 235, 0, 1);    /* #5AEB00 */
-   --lt: rgba(255, 246, 244, 1); /* #FFF6F4 */
+   --dg: #032202;
+   --mg: #1F6032;
+   --lg: #369457;
+   --wt: #f2f2f2;
 }
-
-
-
-/* MEDIA QUERIES - SCREEN SIZES
-*************************************************/
- 
-@media (min-width: 576px) {}
-@media (min-width: 768px) {}
-@media (min-width: 992px) {}
-@media (min-width: 1200px) {}
-
-   
-/* FONT-FACE
-*************************************************/
-@font-face {
-   font-family: 'Aleo';
-   font-style: normal;
-   font-weight: 400;
-   font-display: swap;
-   src: local('Aleo Regular'), local('Aleo-Regular'), url(https://fonts.gstatic.com/s/aleo/v3/c4mv1nF8G8_swA3J0R9rkoc.woff2) format('woff2');
-   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
- }
-
- @font-face {
-   font-family: 'Aleo Bold';
-   font-style: normal;
-   font-weight: 700;
-   font-display: swap;
-   src: local('Aleo Bold'), local('Aleo-Bold'), url(https://fonts.gstatic.com/s/aleo/v3/c4mg1nF8G8_syLbsxDJJn61_9KI.woff2) format('woff2');
-   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
- }
-
- @font-face {
-   font-family: 'Josefin Sans Italic';
-   font-style: italic;
-   font-weight: 400;
-   font-display: swap;
-   src: local('Josefin Sans Italic'), local('JosefinSans-Italic'), url(https://fonts.gstatic.com/s/josefinsans/v14/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format('woff2');
-   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
- }
-   
-
-  

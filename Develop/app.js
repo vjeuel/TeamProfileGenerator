@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 
 // Folder and File creation
-const OUTPUT_DIR = path.resolve(__dirname, "output")
+const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // Render​
@@ -14,6 +14,11 @@ const render = require("./lib/htmlRenderer");
 
 // General questions that will fe asked to all members of the team
 const questionsAsked = teamMember => [
+   {
+      type: "input",
+      name: "photo",
+      message: `Add ${teamMember}'s photo?`
+   },
    {
       type: "input",
       name: "name",
@@ -35,7 +40,6 @@ const questionsAsked = teamMember => [
 const everyone = [];
 const idArr = [];
 
-
 // Creation of each member and their specific questions
 const team = () => {
    const newManager = async () => {
@@ -48,8 +52,8 @@ const team = () => {
             }
          ]);
    
-      const { name, id, email, officeNumber } = res;
-      const manager = new Manager(name, id, email, officeNumber);
+      const { name, id, email, photo, officeNumber } = res;
+      const manager = new Manager(name, id, email, photo, officeNumber);
       
       everyone.push(manager);
       idArr.push(id);
@@ -67,8 +71,8 @@ const team = () => {
             }
          ]);
 
-      const { name, id, email, github } = res;
-      const engineer = new Engineer(name, id, email, github);
+      const { name, id, email, photo, github } = res;
+      const engineer = new Engineer(name, id, email, photo, github);
       
       everyone.push(engineer);
       idArr.push(id);
@@ -86,8 +90,8 @@ const team = () => {
          }
       ]);
    
-      const { name, id, email, school } = res;
-      const intern = new Intern(name, id, email, school);
+      const { name, id, email, photo, school } = res;
+      const intern = new Intern(name, id, email, photo, school);
       
       everyone.push(intern);
       idArr.push(id);
@@ -96,28 +100,32 @@ const team = () => {
    };
 
    // Question if user wants to continue adding members or if should create the new file
+   const newTeam = async () => {
+      const res = await inquirer.prompt([
+         {
+            type: "list",
+            name: "chooseMember",
+            message: `Who would you like to add now?`,
+            choices: ["Engineer", "Intern", "I am done, no one else to add"]
+         }
+      ]);
 
+      switch (res.chooseMember) {
+         case "Engineer":
+            newEngineer();
+            break;
+         
+         case "Intern":
+            newIntern();
+            break;
+      
+         default:
+            fs.writeFileSync(outputPath, render(everyone), "utf-8");
+            break;
+      }
+   };
+
+   newManager();
 };
 
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-​
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-​
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an 
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work!```
+team();
