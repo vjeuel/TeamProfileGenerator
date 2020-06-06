@@ -2,10 +2,10 @@
 <h1 align="center"></h1>
 
 <p align="center">
-  <img src="images/background.png" height="100%">
+  <img src="images/background.png" width="100%">
 </p>
 
-You can access the app [here]("https://vjeuel.github.io/TeamProfileGenerator/")
+You can access the app [here](https://vjeuel.github.io/TeamProfileGenerator/)
 
 ## Description
 
@@ -16,7 +16,6 @@ This is an app that generates profile on several individuals in an organization 
 **[Installation](#Installation)**<br>
 **[Usage](#Usage)**<br>
 **[License](#License)**</br>
-**[Contributors](#Contributors)**<br>
 **[Tests](#Tests)**<br>
 **[Contact](#Contact)**<br>
 
