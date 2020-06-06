@@ -2,25 +2,13 @@
 <h1 align="center"></h1>
 
 <p align="center">
-  <img src="../../background.png" height="100%">
+  <img src="images/background.png" height="100%">
 </p>
-
-<p align="center" margin="20px">
-  <a>
-    <img src="https://img.shields.io/badge/contributor-my%20grandma-green?style=for-the-badge" /></>
-  <a>
-    <img src="https://img.shields.io/badge/approved%20by-Arya%20Stark-red?style=for-the-badge" /></a>
-  <a>
-    <img src="https://img.shields.io/badge/powered%20by-lack%20of%20sleep-orange?style=for-the-badge" /></a>
-</p>
-
-You can access the app [here]()
-
 
 ## Description
 
 
-This is an app that generates profile on several individuals in an organization by asking question on terminal using node.js. I added a feature to also be able to add a photo of the team member and used css to style the page.
+This is an app that generates profile on several individuals in an organization by asking question on terminal using Node.js. I added a feature to also be able to add a photo of the team member and used css to style the page.
 
 ## Contents<br>
 **[Installation](#Installation)**<br>
@@ -31,10 +19,11 @@ This is an app that generates profile on several individuals in an organization 
 **[Contact](#Contact)**<br>
 
 ## **Installation**<br>
-npm install inquirer
+`npm install inquirer`<br>
+`npm install jest`
 
 ## **Usage**<br>
-To generate Teams profiles using Node.js
+To generate Teams Profiles using Node.js
 
 ## **License**<br>
 mit
