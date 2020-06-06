@@ -28,9 +28,6 @@ To generate Teams Profiles using Node.js
 ## **License**<br>
 mit
 
-## **Contributors**<br>
-No contributors
-
 ## **Tests**<br>
 Tests were run using Jest library, to run the test use `npm run test`.
 
