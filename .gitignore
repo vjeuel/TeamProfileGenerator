@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 Assets
 package-lock.json
 instructions.md
